@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:utils_functions/utils.dart';
 
+import 'json_function.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -16,7 +18,7 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const MyHomePage(title: 'Flutter Camel Case Demo'),
+      home: const JsonFunction(),
     );
   }
 }

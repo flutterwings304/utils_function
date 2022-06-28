@@ -1,3 +1,7 @@
+import 'dart:convert';
+
+import 'package:flutter/services.dart';
+
 class Utils {
   static String capitalize(String str) {
     if (str.isNotEmpty) {
@@ -15,5 +19,15 @@ class Utils {
     } else {
       return str;
     }
+  }
+
+  static Future readJsonData({required String path}) async {
+    //read json file
+    final jsondata = await rootBundle.loadString(path);
+    //decode json data as data present in your json file
+    final list = json.decode(jsondata) as Map;
+
+    //map json and initialize using DataModel
+    return list;
   }
 }
